@@ -4,6 +4,8 @@ import com.portfolio.get_in_touch.repository.GetInTouchRepository;
 import org.springframework.stereotype.Service;
 import com.portfolio.get_in_touch.model.GetInTouch;
 
+import java.util.List;
+
 @Service
 public class GetInTouchServiceImpl {
 
@@ -15,5 +17,9 @@ public class GetInTouchServiceImpl {
 
     public GetInTouch submitDetails(GetInTouch getInTouch){
         return repository.save(getInTouch);
+    }
+
+    public List<GetInTouch> getAllVisitors(){
+        return repository.findAll();
     }
 }
